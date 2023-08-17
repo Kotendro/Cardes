@@ -23,7 +23,7 @@ class CardWindow(QWidget, Ui_Card_Window):
         self.setWindowTitle('Cardes')
         self.setWindowIcon(QIcon('ico_app.png'))
 
-        self.move(x+1020, y)
+        self.move(x + 1020, y)
 
         self.widget = widget
         self.flag = flag
@@ -100,7 +100,6 @@ class CardWindow(QWidget, Ui_Card_Window):
         elif self.edit_flag == 1:
             self.edit_flag = 0
 
-
             if self.LineEdit_category.text() == '':
                 self.LineEdit_category.setText('all')
             self.But_edit.setText('Edit')
@@ -131,11 +130,10 @@ class CardWindow(QWidget, Ui_Card_Window):
         if share_type == 0:
             pass
 
-        elif share_type == 1: # Карта
+        elif share_type == 1:  # Карта
             try:
                 path_save = QFileDialog.getExistingDirectory(self, 'Сохранить', None)
                 if path_save != '':
-
                     mkdir(f'{path_save}/Shared_{self.widget.id_card}')
 
                     with shelve.open(f'{path_save}\Shared_{self.widget.id_card}\CardShare') as dat:
@@ -146,7 +144,7 @@ class CardWindow(QWidget, Ui_Card_Window):
             except FileExistsError:
                 pass
 
-        elif share_type == 2: # Категория
+        elif share_type == 2:  # Категория
             try:
                 path_save = QFileDialog.getExistingDirectory(self, 'Сохранить', None)
                 if path_save != '':

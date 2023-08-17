@@ -15,6 +15,7 @@ from cardWindow import CardWindow
 
 from flowLayout import FlowLayout
 
+
 class MainWindow(QMainWindow, Ui_Main_Window):
 
     def __init__(self):
@@ -23,10 +24,15 @@ class MainWindow(QMainWindow, Ui_Main_Window):
 
         self.setWindowTitle('Cardes')
         self.setWindowIcon(QIcon('ico_app.png'))
-
+        # Special grid-like layout that automatically positions new items in rows according to available space
         self.Layout_flow = FlowLayout()
+
+        # Load existing cards from the database, show the ones that match current filters
         self.setup_card_data()
+
+        # Load card categories from the cards themselves(!), fill up the Categories filter selection box
         self.setup_categories()
+
         self.Layout_scrollArea.addLayout(self.Layout_flow)
 
         self.But_add.clicked.connect(self.add_button)
@@ -40,12 +46,12 @@ class MainWindow(QMainWindow, Ui_Main_Window):
     def setup_id_card(self):
         with shelve.open('Data\Card_id') as dat:
             for value in dat.values():
-                for i in range(0, len(value)+1):
+                print(value)
+                for i in range(0, len(value) + 1):
                     if i not in value:
                         value.append(i)
                         dat['id_card'] = sorted(value)
                         self.id_card = i
-
 
     def setup_card_data(self):
         def create_widget_in_area():
@@ -53,7 +59,6 @@ class MainWindow(QMainWindow, Ui_Main_Window):
             self.Layout_flow.addWidget(card)
             self.settings_icon_card(card, value[0], id_card)
             card.create_card_window.connect(self.create_card_window)
-
 
         def sorting_categories():
             if self.ComboBox_categories.currentText() == 'all':
@@ -66,32 +71,32 @@ class MainWindow(QMainWindow, Ui_Main_Window):
         def sorting_diff():
             if self.ComboBox_difficulty.currentIndex() == 0:
                 create_widget_in_area()
-            elif self.ComboBox_difficulty.currentIndex()-1 == value[3]:
+            elif self.ComboBox_difficulty.currentIndex() - 1 == value[3]:
                 create_widget_in_area()
             else:
                 pass
 
         with shelve.open('Data\Card') as dat:
-                if self.ComboBox_sorting.currentText() == 'all':
-                    for id_card, value in dat.items():
+            if self.ComboBox_sorting.currentText() == 'all':
+                for id_card, value in dat.items():
+                    if sorting_categories():
+                        sorting_diff()
+
+            if self.ComboBox_sorting.currentText() == 'completed':
+                for id_card, value in dat.items():
+                    if value[0] == 1:
                         if sorting_categories():
                             sorting_diff()
+                    if value[0] == 0:
+                        pass
 
-                if self.ComboBox_sorting.currentText() == 'completed':
-                    for id_card, value in dat.items():
-                        if value[0] == 1:
-                            if sorting_categories():
-                                sorting_diff()
-                        if value[0] == 0:
-                            pass
-
-                if self.ComboBox_sorting.currentText() == 'uncompleted':
-                    for id_card, value in dat.items():
-                        if value[0] == 0:
-                            if sorting_categories():
-                                sorting_diff()
-                        if value[0] == 1:
-                            pass
+            if self.ComboBox_sorting.currentText() == 'uncompleted':
+                for id_card, value in dat.items():
+                    if value[0] == 0:
+                        if sorting_categories():
+                            sorting_diff()
+                    if value[0] == 1:
+                        pass
 
     def setup_categories(self):
         current = self.ComboBox_categories.currentText()
@@ -141,7 +146,7 @@ class MainWindow(QMainWindow, Ui_Main_Window):
         if picture[0] != '':
             self.setup_id_card()
 
-            with Image.open(picture[0]) as image_copy:       #копирование файла
+            with Image.open(picture[0]) as image_copy:  # копирование файла
                 image_copy.save(f'Pictures\{self.id_card}.png')
                 blackAndWhite = image_copy.convert('L')
                 blackAndWhite.save(f'BlackAndWhite_Pictures\{self.id_card}.png')
@@ -181,7 +186,8 @@ class MainWindow(QMainWindow, Ui_Main_Window):
 
     def create_card_window(self):
         widget = self.sender()
-        self.card_window = CardWindow(widget, widget.flag, widget.edit, widget.category, widget.diff, self.pos().x(), self.pos().y())
+        self.card_window = CardWindow(widget, widget.flag, widget.edit, widget.category, widget.diff, self.pos().x(),
+                                      self.pos().y())
         self.card_window.show()
         self.ComboBox_sorting.setEnabled(0)
         self.ComboBox_categories.setEnabled(0)
@@ -227,7 +233,3 @@ class MainWindow(QMainWindow, Ui_Main_Window):
     def closeEvent(self, event):
         QApplication.closeAllWindows()
         return super(MainWindow, self).closeEvent(event)
-
-
-
-
