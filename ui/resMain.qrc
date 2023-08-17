@@ -1,0 +1,16 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>for_app_ui/star_1.png</file>
+    <file>for_app_ui/icons8-внешняя-ссылка-128.png</file>
+    <file>for_app_ui/icons8-мусор-128.png</file>
+    <file>for_app_ui/icons8-настройки-128.png</file>
+    <file>for_app_ui/icons8-ок-128.png</file>
+    <file>for_app_ui/icons8-плюс-128.png</file>
+    <file>for_app_ui/icons8-поиск-128.png</file>
+    <file>for_app_ui/icons8-файл-128.png</file>
+    <file>for_app_ui/star_2.png</file>
+    <file>for_app_ui/star_3.png</file>
+    <file>for_app_ui/star_4.png</file>
+    <file>for_app_ui/star_5.png</file>
+  </qresource>
+</RCC>

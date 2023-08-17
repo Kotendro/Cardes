@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Main_Window</class>
+ <widget class="QMainWindow" name="Main_Window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1020</width>
+    <height>621</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1020</width>
+    <height>621</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1020</width>
+    <height>621</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(253, 253, 253);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="frame">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>36</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Bahnschrift</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <stylestrategy>PreferDefault</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(217, 217, 217);
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="Label_sorting">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Bahnschrift</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(90, 90, 90);</string>
+         </property>
+         <property name="text">
+          <string>Sorting:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="ComboBox_sorting">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Bahnschrift</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <italic>false</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>ArrowCursor</cursorShape>
+         </property>
+         <property name="mouseTracking">
+          <bool>false</bool>
+         </property>
+         <property name="tabletTracking">
+          <bool>false</bool>
+         </property>
+         <property name="contextMenuPolicy">
+          <enum>Qt::DefaultContextMenu</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox{
+color: rgb(90, 90, 90);
+width: 0px;
+height: 0px;
+border: 0px;
+	background-color: qlineargradient(spread:pad, x1:1, y1:0.914773, x2:1, y2:1, stop:0 rgba(210, 210, 210, 255), stop:0.0454545 rgba(184, 184, 184, 255));
+}
+
+QComboBox:hover {
+	background-color: qlineargradient(spread:pad, x1:1, y1:0.914773, x2:1, y2:1, stop:0 rgba(200, 200, 200, 255), stop:0.0454545 rgba(184, 184, 184, 255));
+}
+
+QComboBox::drop-down {
+width: 0px;
+height: 0px;
+border: 0px;
+}
+
+QComboBox QAbstractItemView {
+selection-background-color: rgb(210, 210, 210);
+selection-color:  rgb(90, 90, 90);
+selection-border-color: rgb(200, 200, 200, 100);
+color: rgb(90, 90, 90);
+}
+
+QComboBox:disabled {
+	background-color: qlineargradient(spread:pad, x1:1, y1:0.914773, x2:1, y2:1, stop:0 rgba(190, 190, 190, 255), stop:0.0454545 rgba(184, 184, 184, 255));
+}
+
+
+
+
+</string>
+         </property>
+         <property name="editable">
+          <bool>false</bool>
+         </property>
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <property name="insertPolicy">
+          <enum>QComboBox::InsertAtBottom</enum>
+         </property>
+         <property name="sizeAdjustPolicy">
+          <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+         </property>
+         <property name="duplicatesEnabled">
+          <bool>false</bool>
+         </property>
+         <property name="frame">
+          <bool>true</bool>
+         </property>
+         <property name="modelColumn">
+          <number>0</number>
+         </property>
+         <item>
+          <property name="text">
+           <string>all</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>completed</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>uncompleted</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="Label_categories">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Bahnschrift</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(90, 90, 90);</string>
+         </property>
+         <property name="text">
+          <string>Сategories:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="ComboBox_categories">
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Bahnschrift</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox{
+color: rgb(90, 90, 90);
+width: 0px;
+height: 0px;
+border: 0px;
+	background-color: qlineargradient(spread:pad, x1:1, y1:0.914773, x2:1, y2:1, stop:0 rgba(210, 210, 210, 255), stop:0.0454545 rgba(184, 184, 184, 255));
+}
+
+QComboBox:hover {
+	background-color: qlineargradient(spread:pad, x1:1, y1:0.914773, x2:1, y2:1, stop:0 rgba(200, 200, 200, 255), stop:0.0454545 rgba(184, 184, 184, 255));
+}
+
+QComboBox::drop-down {
+width: 0px;
+height: 0px;
+border: 0px;
+}
+
+QComboBox QAbstractItemView {
+selection-background-color: rgb(210, 210, 210);
+selection-color:  rgb(90, 90, 90);
+selection-border-color: rgb(200, 200, 200, 100);
+color: rgb(90, 90, 90);
+}
+
+QComboBox:disabled {
+	background-color: qlineargradient(spread:pad, x1:1, y1:0.914773, x2:1, y2:1, stop:0 rgba(190, 190, 190, 255), stop:0.0454545 rgba(184, 184, 184, 255));
+}</string>
+         </property>
+         <property name="duplicatesEnabled">
+          <bool>true</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>all</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="Label_difficulty">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Bahnschrift</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(90, 90, 90);</string>
+         </property>
+         <property name="text">
+          <string>Difficulty:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="ComboBox_difficulty">
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Bahnschrift</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox{
+color: rgb(90, 90, 90);
+width: 0px;
+height: 0px;
+border: 0px;
+	background-color: qlineargradient(spread:pad, x1:1, y1:0.914773, x2:1, y2:1, stop:0 rgba(210, 210, 210, 255), stop:0.0454545 rgba(184, 184, 184, 255));
+}
+
+QComboBox:hover {
+	background-color: qlineargradient(spread:pad, x1:1, y1:0.914773, x2:1, y2:1, stop:0 rgba(200, 200, 200, 255), stop:0.0454545 rgba(184, 184, 184, 255));
+}
+
+QComboBox::drop-down {
+width: 0px;
+height: 0px;
+border: 0px;
+}
+
+QComboBox QAbstractItemView {
+selection-background-color: rgb(210, 210, 210);
+selection-color:  rgb(90, 90, 90);
+selection-border-color: rgb(200, 200, 200, 100);
+color: rgb(90, 90, 90);
+}
+
+QComboBox:disabled {
+	background-color: qlineargradient(spread:pad, x1:1, y1:0.914773, x2:1, y2:1, stop:0 rgba(190, 190, 190, 255), stop:0.0454545 rgba(184, 184, 184, 255));
+}</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>100</width>
+           <height>100</height>
+          </size>
+         </property>
+         <item>
+          <property name="text">
+           <string>all</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="resMain.qrc">
+            <normaloff>:/icons/for_app_ui/star_1.png</normaloff>:/icons/for_app_ui/star_1.png</iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="resMain.qrc">
+            <normaloff>:/icons/for_app_ui/star_2.png</normaloff>:/icons/for_app_ui/star_2.png</iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="resMain.qrc">
+            <normaloff>:/icons/for_app_ui/star_3.png</normaloff>:/icons/for_app_ui/star_3.png</iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="resMain.qrc">
+            <normaloff>:/icons/for_app_ui/star_4.png</normaloff>:/icons/for_app_ui/star_4.png</iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="resMain.qrc">
+            <normaloff>:/icons/for_app_ui/star_5.png</normaloff>:/icons/for_app_ui/star_5.png</iconset>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Expanding</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="But_help">
+         <property name="minimumSize">
+          <size>
+           <width>50</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>50</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Bahnschrift</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <italic>false</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+color: rgb(90, 90, 90);
+	background-color: qlineargradient(spread:pad, x1:1, y1:0.914773, x2:1, y2:1, stop:0 rgba(210, 210, 210, 255), stop:0.0454545 rgba(184, 184, 184, 255));
+border-width: 0px;
+border-radius: 0px;
+}
+
+QPushButton:hover {
+	background-color: qlineargradient(spread:pad, x1:1, y1:0.914773, x2:1, y2:1, stop:0 rgba(200, 200, 200, 255), stop:0.0454545 rgba(184, 184, 184, 255));
+}
+
+QPushButton:pressed {
+	background-color: qlineargradient(spread:pad, x1:1, y1:0.914773, x2:1, y2:1, stop:0 rgba(190, 190, 190, 255), stop:0.0454545 rgba(184, 184, 184, 255));
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Help</string>
+         </property>
+         <property name="icon">
+          <iconset resource="resMain.qrc">
+           <normaloff>:/icons/for_app_ui/icons8-поиск-128.png</normaloff>:/icons/for_app_ui/icons8-поиск-128.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="But_open">
+         <property name="minimumSize">
+          <size>
+           <width>75</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Bahnschrift</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+color: rgb(90, 90, 90);
+	background-color: qlineargradient(spread:pad, x1:1, y1:0.914773, x2:1, y2:1, stop:0 rgba(210, 210, 210, 255), stop:0.0454545 rgba(184, 184, 184, 255));
+border-width: 0px;
+border-radius: 0px;
+}
+
+QPushButton:hover {
+	background-color: qlineargradient(spread:pad, x1:1, y1:0.914773, x2:1, y2:1, stop:0 rgba(200, 200, 200, 255), stop:0.0454545 rgba(184, 184, 184, 255));
+}
+
+QPushButton:pressed {
+	background-color: qlineargradient(spread:pad, x1:1, y1:0.914773, x2:1, y2:1, stop:0 rgba(190, 190, 190, 255), stop:0.0454545 rgba(184, 184, 184, 255));
+}</string>
+         </property>
+         <property name="text">
+          <string>Open</string>
+         </property>
+         <property name="icon">
+          <iconset resource="resMain.qrc">
+           <normaloff>:/icons/for_app_ui/icons8-файл-128.png</normaloff>:/icons/for_app_ui/icons8-файл-128.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="But_add">
+         <property name="minimumSize">
+          <size>
+           <width>75</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>75</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Bahnschrift</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+color: rgb(90, 90, 90);
+	background-color: qlineargradient(spread:pad, x1:1, y1:0.914773, x2:1, y2:1, stop:0 rgba(210, 210, 210, 255), stop:0.0454545 rgba(184, 184, 184, 255));
+border-width: 0px;
+border-radius: 0px;
+}
+
+QPushButton:hover {
+	background-color: qlineargradient(spread:pad, x1:1, y1:0.914773, x2:1, y2:1, stop:0 rgba(200, 200, 200, 255), stop:0.0454545 rgba(184, 184, 184, 255));
+}
+
+QPushButton:pressed {
+	background-color: qlineargradient(spread:pad, x1:1, y1:0.914773, x2:1, y2:1, stop:0 rgba(190, 190, 190, 255), stop:0.0454545 rgba(184, 184, 184, 255));
+}</string>
+         </property>
+         <property name="text">
+          <string>Add</string>
+         </property>
+         <property name="icon">
+          <iconset resource="resMain.qrc">
+           <normaloff>:/icons/for_app_ui/icons8-плюс-128.png</normaloff>:/icons/for_app_ui/icons8-плюс-128.png</iconset>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="styleSheet">
+       <string notr="true">QScrollArea {
+border: 0px
+}
+
+QScrollBar:vertical{
+	background-color: rgb(217, 217, 217)
+}
+
+QScrollBar::handle:vertical {
+	
+	color: rgb(255, 26, 76);
+    background:	rgb(210, 210, 210);
+}
+
+
+</string>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>1020</width>
+         <height>585</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+border: 0px;
+background-color: qradialgradient(spread:reflect, cx:0.506, cy:0, radius:1.104, fx:0.505682, fy:0, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(224, 224, 224, 255));</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="Layout_scrollArea">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resMain.qrc"/>
+ </resources>
+ <connections/>
+</ui>
