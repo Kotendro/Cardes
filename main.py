@@ -13,11 +13,13 @@ def create_pictures_dir():
     except FileExistsError:
         pass
 
+
 def create_BAW_pictures_dir():
     try:
         mkdir('BlackAndWhite_Pictures')
     except FileExistsError:
         pass
+
 
 def create_data_dir():
     try:
@@ -25,15 +27,18 @@ def create_data_dir():
     except FileExistsError:
         pass
 
+
 def create_shelve_data():
-    if path.exists('Data\Card.dat') == False:
+    if not path.exists('Data\Card.dat'):
         shelve.open('Data\Card')
 
+
 def create_shelve_card_id():
-    if path.exists('Data\Card_id.dat') == False:
+    if not path.exists('Data\Card_id.dat'):
         shelve.open('Data\Card_id')
         with shelve.open('Data\Card_id') as dat:
             dat['id_card'] = [0]
+
 
 if __name__ == '__main__':
     create_pictures_dir()

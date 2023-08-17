@@ -17,7 +17,7 @@ class FlowLayout(QLayout):
         while item:
             item = self.takeAt(0)
 
-    def addItem(self, arg__1:PySide6.QtWidgets.QLayoutItem) -> None:
+    def addItem(self, arg__1: PySide6.QtWidgets.QLayoutItem) -> None:
         self.items_list.append(arg__1)
 
     def count(self) -> int:
@@ -40,7 +40,7 @@ class FlowLayout(QLayout):
     def heightForWidth(self, arg__1: int) -> int:
         return self.processing(QRect(0, 0, arg__1, 0))
 
-    def setGeometry(self, arg__1:PySide6.QtCore.QRect) -> None:
+    def setGeometry(self, arg__1: PySide6.QtCore.QRect) -> None:
         super(FlowLayout, self).setGeometry(arg__1)
         self.processing(arg__1)
 
